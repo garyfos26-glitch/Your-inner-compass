@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unleashing The Power Of Self‑Discipline</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background: #f7f3ee; color: #0c2a43; }
+    header { background: white; padding: 1rem 2rem; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; }
+    nav a { margin: 0 0.75rem; text-decoration: none; color: #0c2a43; font-weight: 500; }
+    .hero { padding: 4rem 2rem; text-align: center; background: linear-gradient(to bottom, #fff, #f7f3ee); }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; color: #444; margin-bottom: 2rem; }
+    .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: bold; text-decoration: none; }
+    .btn-primary { background: #ef6a1f; color: white; }
+    .btn-secondary { background: white; border: 1px solid #ddd; color: #0c2a43; }
+    section { padding: 3rem 2rem; max-width: 1000px; margin: auto; }
+    h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+    .features, .programs, .testimonials { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .card { background: white; border: 1px solid #eee; border-radius: 16px; padding: 1.5rem; }
+    footer { background: white; border-top: 1px solid #ddd; text-align: center; padding: 1rem; font-size: 0.9rem; color: #555; }
+    /* Chat widget */
+    #chat-btn { position: fixed; bottom: 20px; right: 20px; background: #ef6a1f; color: white; border: none; border-radius: 12px; padding: 0.75rem 1rem; font-weight: bold; cursor: pointer; }
+    #chat-box { display: none; position: fixed; bottom: 80px; right: 20px; width: 300px; max-height: 400px; background: white; border: 1px solid #ddd; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; }
+    #chat-messages { flex: 1; padding: 1rem; overflow-y: auto; font-size: 0.9rem; }
+    .msg { margin: 0.5rem 0; padding: 0.5rem 0.75rem; border-radius: 12px; max-width: 80%; }
+    .bot { background: #f7f3ee; align-self: flex-start; }
+    .user { background: #0c2a43; color: white; align-self: flex-end; }
+    #chat-input { display: flex; border-top: 1px solid #ddd; }
+    #chat-input input { flex: 1; border: none; padding: 0.75rem; font-size: 0.9rem; }
+    #chat-input button { background: #ef6a1f; color: white; border: none; padding: 0 1rem; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong>Self‑Discipline</strong></div>
+    <nav>
+      <a href="#programs">Programs</a>
+      <a href="#method">Method</a>
+      <a href="#testimonials">Results</a>
+      <a href="#cta">Join</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Unleash Your Potential with Self‑Discipline</h1>
+    <p>Build unstoppable momentum through simple, repeatable systems.</p>
+    <a href="#cta" class="btn btn-primary">Start the 7‑Day Challenge</a>
+    <a href="#method" class="btn btn-secondary">See how it works</a>
+  </section>
+
+  <section id="method">
+    <h2>The Method</h2>
+    <div class="features">
+      <div class="card"><h3>Keystone Focus</h3><p>Choose one needle‑moving task per day.</p></div>
+      <div class="card"><h3>Time Blocks</h3><p>Work in 90‑minute cycles with breaks.</p></div>
+      <div class="card"><h3>Track & Review</h3><p>Log wins and review weekly.</p></div>
+    </div>
+  </section>
+
+  <section id="programs">
+    <h2>Programs</h2>
+    <div class="programs">
+      <div class="card"><h3>Starter</h3><p>Free 7‑day challenge + journal.</p></div>
+      <div class="card"><h3>Core</h3><p>Self‑paced course + templates.</p></div>
+      <div class="card"><h3>Pro</h3><p>Live coaching + team programs.</p></div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>Real Results</h2>
+    <div class="testimonials">
+      <div class="card"><strong>+90 minutes daily</strong><p>“I finally finished my certification.”</p></div>
+      <div class="card"><strong>+22% tasks</strong><p>“Less juggling, more finishing.”</p></div>
+      <div class="card"><strong>3x workouts</strong><p>“The 2‑minute rule got me in the door.”</p></div>
+    </div>
+  </section>
+
+  <section id="cta">
+    <h2>Join the 7‑Day Challenge</h2>
+    <form onsubmit="alert('Thanks! Check your inbox for the starter kit.'); return false;">
+      <input type="email" required placeholder="you@example.com" style="padding:0.5rem; border:1px solid #ddd; border-radius:8px;" />
+      <button type="submit" class="btn btn-primary">Get Started</button>
+    </form>
+  </section>
+
+  <footer id="contact">
+    © <script>document.write(new Date().getFullYear());</script> Unleashing The Power Of Self‑Discipline
+  </footer>
+
+  <!-- Chat widget -->
+  <button id="chat-btn">Chat</button>
+  <div id="chat-box">
+    <div id="chat-messages">
+      <div class="msg bot">Welcome! What’s one goal you want to be consistent with this month?</div>
+    </div>
+    <div id="chat-input">
+      <input type="text" id="chat-text" placeholder="Type a message..." />
+      <button onclick="sendMsg()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    const chatBtn = document.getElementById('chat-btn');
+    const chatBox = document.getElementById('chat-box');
+    const messages = document.getElementById('chat-messages');
+
+    chatBtn.onclick = () => {
+      chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
+    };
+
+    function sendMsg() {
+      const input = document.getElementById('chat-text');
+      const text = input.value.trim();
+      if (!text) return;
+      const userMsg = document.createElement('div');
+      userMsg.className = 'msg user';
+      userMsg.textContent = text;
+      messages.appendChild(userMsg);
+      input.value = '';
+      setTimeout(() => {
+        const botMsg = document.createElement('div');
+        botMsg.className = 'msg bot';
+        botMsg.textContent = getBotReply(text);
+        messages.appendChild(botMsg);
+        messages.scrollTop = messages.scrollHeight;
+      }, 500);
+    }
+
+    function getBotReply(text) {
+      const t = text.toLowerCase();
+      if (t.includes('plan') || t.includes('routine')) return 'Try a 30‑minute routine: 5m prep, 20m focus, 5m review.';
+      if (t.includes('course') || t.includes('program')) return 'Programs: Starter (free), Core (£79), Pro (£29/mo).';
+      if (t.includes('journal')) return 'Our Focus Journal has 3 lines: Today’s One Thing, Focus Block, Win.';
+      if (t.includes('challenge')) return 'Our 30‑Day Discipline Sprint starts Monday. Want details?';
+      if (t.includes('contact')) return 'Reach us at support@selfdiscipline.io.';
+      return 'Discipline isn’t about doing more — it’s about doing what matters most, consistently.';
+    }
+  </script>
+</body>
+</html>
